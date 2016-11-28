@@ -1,0 +1,2 @@
+main:main.o fun2.o fun3.o fun4.o
+	gcc -o main main.o fun2.o fun3.o fun4.o

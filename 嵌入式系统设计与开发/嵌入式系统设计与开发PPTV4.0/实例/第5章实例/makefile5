@@ -1,0 +1,19 @@
+OBJS=main.o fun2.o fun3.o fun4.o
+all:main main2
+.PHONY:all clean
+main:$(OBJS)
+	gcc -o main $(OBJS)
+main.o:main.c
+	gcc -o main.o -c main.c
+fun2.o:fun2.c
+	gcc -o fun2.o -c fun2.c
+fun3.o:fun3.c
+	gcc -o fun3.o -c fun3.c
+fun4.o:fun4.c
+	gcc -o fun4.o -c fun4.c
+main2:main2.o fun2.o
+	gcc -o main2 main2.o fun2.o
+main2.o:main2.c
+	gcc -o main2.o -c main2.c
+clean:
+	rm -f $(OBJS) main2.o

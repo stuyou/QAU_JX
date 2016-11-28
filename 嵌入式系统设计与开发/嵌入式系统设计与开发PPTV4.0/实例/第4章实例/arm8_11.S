@@ -1,0 +1,6 @@
+	IMPORT __main
+	AREA TEST,CODE,READONLY
+START
+	MOV R0,#0
+	BL __main
+	END

@@ -1,0 +1,24 @@
+	IMPORT |Image$$RO$$Base|
+	IMPORT |Image$$RO$$Limit|
+	IMPORT |Image$$RW$$Base|
+	IMPORT |Image$$RW$$Limit|
+	IMPORT |Image$$ZI$$Base|
+	IMPORT |Image$$ZI$$Limit|
+	AREA STR,DATA,READWRITE
+SRC_STR DCB "source",0
+DES_STR SPACE 10
+	AREA TEST,CODE,READONLY
+	ENTRY
+START
+	LDR R0,=SRC_STR
+	LDR R1,=DES_STR
+CP	
+	LDRB R2,[R0],#1
+	STRB R2,[R1],#1
+	CMP R2,#0
+	BNE CP
+LOOP
+	B LOOP
+	END
+	
+	

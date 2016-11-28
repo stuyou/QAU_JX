@@ -1,0 +1,13 @@
+OBJS=main.o fun2.o fun3.o fun4.o
+CC=gcc
+CFLAGS=-c
+main:$(OBJS)
+	$(CC) -o main $(OBJS)
+main.o:main.c
+	$(CC) -o main.o $(CFLAGS) main.c
+fun2.o:fun2.c
+	$(CC) -o fun2.o $(CFLAGS) fun2.c
+fun3.o:fun3.c
+	$(CC) -o fun3.o $(CFLAGS) fun3.c
+fun4.o:fun4.c
+	$(CC) -o fun4.o $(CFLAGS) fun4.c
